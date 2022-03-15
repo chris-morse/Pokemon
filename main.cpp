@@ -53,15 +53,15 @@ int main(){
 	{
 		cout << "Enter nickname: " << endl;
 		cin >> starter.nickname;
-	} 
+	} else{
+		starter.nickname = starter.name; }
 	sleep(1);
 	displayStats(starter);
-	sleep(3);
+	sleep(1);
+	cout << endl << endl << player.name << "'s Bank Account: $" << player.money << endl;
+	sleep(5);
 	cout << endl << endl <<
 		"Okay " << player.name << ", you and " << starter.nickname << " are ready to begin your adventure!" << endl;
-
-
-
 
 
 

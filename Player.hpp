@@ -15,8 +15,7 @@ public:
 	double money;
 	double wins;
 	
-	Player() : money(100), wins(0)
-	{}
+	Player() : money(6.34), wins(0) {}
 
 };
 

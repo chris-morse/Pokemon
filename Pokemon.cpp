@@ -4,7 +4,6 @@
 
 Pokemon::Pokemon()
 {	
-	nickname = name;
 	level = 1;
 	maxhp = 20;
 	hp = 20;
