@@ -6,7 +6,6 @@ using namespace std;
 
 int main(){
 
-
 	Pokemon starter;
 	string username;
 	string nickname;

@@ -6,7 +6,6 @@ using namespace std;
 
 class Chimchar : public Pokemon
 {
-
 public:
 
 	Chimchar() : Pokemon()
@@ -19,7 +18,6 @@ public:
 
 class Turtwig : public Pokemon
 {
-
 public:
 
 	Turtwig() : Pokemon()
@@ -32,7 +30,6 @@ public:
 
 class Piplup : public Pokemon
 {
-
 public:
 
 	Piplup() : Pokemon()
@@ -46,7 +43,6 @@ public:
 
 class Pikachu : public Pokemon
 {
-
 public:
 
 	Pikachu() : Pokemon()
