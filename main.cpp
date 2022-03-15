@@ -1,11 +1,11 @@
 //Pokemon main.cpp
 // just getting things started right now
 #include "Pokemon.hpp"
-
+using namespace std;
 
 int main(){
 
-	Pokemon starter();
+	Pokemon starter;
 	string username;
 	int enter;
 
@@ -29,7 +29,7 @@ int main(){
 		starter.setName("Turtwig");
 
 
-
+	cout << "You chose " << starter.name << endl;
 
 
 

@@ -1,12 +1,13 @@
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
-#include <string>
 #include <iostream>
+#include <string>
 using namespace std;
-
 
 class Pokemon
 {
+
+
 private:
 
 	int level;
@@ -20,6 +21,7 @@ private:
 
 public:
     
+
     string name;
     string nickname;
        
