@@ -7,28 +7,29 @@ using namespace std;
 
 class Pokemon
 {
-      
 private:
-	
+
+	int level;
 	int hp;
 	int speed;
 	int attack;
 	int defense;
 	int spAttack;
 	int spDefense;
-
+	
+	
 public:
-       
+    
     string name;
     string nickname;
        
-    int getHealth() const;
-  
-
-
+	Pokemon();
+	int getHealth() const;
+	
 
 
 
 
 };
+
 #endif
