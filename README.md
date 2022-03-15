@@ -1,5 +1,5 @@
 # Pokemon
 Pokemon Game
 
-Simple pokemon game, to practice my C++ coding skills
+Text-based Pokemon game, to work on my C++ skills
 	
