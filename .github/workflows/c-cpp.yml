@@ -7,8 +7,18 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  build: game
+    
+    game: main.o Pokemon.o
+      g++ -o game main.o Pokemon.o
+    
+    main.o: main.cpp Pokemon.hpp
+      g++ -c main.cpp
+    
+    Pokemon.o: Pokemon.cpp Pokemon.hpp
+      g++ -c Pokemon.cpp
+    
+    
     runs-on: ubuntu-latest
 
     steps:
