@@ -33,7 +33,6 @@ int main(){
 		  	"\033[34mPiplup\033[0m		\033[44;1m Water \033[0m		  2" << endl << endl <<
 			"\033[32mTurtwig\033[0m		\033[42;1m Grass \033[0m		  3" << endl << endl;
 			cin >> enter;
-
 	if(enter == 1)
 		starter = Chimchar();
 	else if(enter == 2)

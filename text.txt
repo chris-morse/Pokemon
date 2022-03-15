@@ -1,0 +1,34 @@
+
+
+full shannon loading
+
+lmao
+yup
+
+rly? i never return my money
+i steal money
+can I steal memory from the memory bank too?
+
+
+shes fuming
+furious
+enraged
+she aboutta scream
+WHOOOOOOOOOOOOOOOAHAHAHAHHAHA
+
+follow me to teh main.cpp
+how did you get the color in the terminal/console?
+
+
+
+you push yourself when you are happy with your changes
+it updates live to my computer's copy of the files, not github
+now i can stage the files and push them and update instantly
+
+not sure what you mean
+If you want to work on it, you go to the git tab on the left colum, the one i have highlighted. Then you clone git repository from github, paste the link
+and download teh files to your computer as a clone. Then when you make new files or edit these ones, you push it to github as a pull request, and i approve it
+
+
+So when we update stuff live, does it automatically push to the github?
+ohhhhhhhhhhhh okay so you could just do the uploading and it would work the same?
