@@ -1,3 +1,6 @@
+//Pokedex.hpp 
+//Stores class declarations of every pokemon in the game
+//Created by Chris Morse 3/14/22
 #ifndef POKEDEX_HPP
 #define POKEDEX_HPP
 
@@ -49,6 +52,66 @@ public:
 	{
 		name = "Pikachu";
 		type = electric;
+	}
+
+};
+
+class Bidoof : public Pokemon
+{
+public:
+
+	Bidoof() : Pokemon()
+	{
+		name = "Bidoof";
+		type = normal;
+	}
+
+};
+
+class Cranidos : public Pokemon
+{
+public:
+
+	Cranidos() : Pokemon()
+	{
+		name = "Cranidos";
+		type = rock;
+	}
+
+};
+
+class Buizel : public Pokemon
+{
+public:
+
+	Buizel() : Pokemon()
+	{
+		name = "Buizel";
+		type = water;
+	}
+
+};
+
+class Starly : public Pokemon
+{
+public:
+
+	Starly() : Pokemon()
+	{
+		name = "Starly";
+		type = flying;
+	}
+
+};
+
+class Ralts : public Pokemon
+{
+public:
+
+	Ralts() : Pokemon()
+	{
+		name = "Ralts";
+		type = psychic;
 	}
 
 };

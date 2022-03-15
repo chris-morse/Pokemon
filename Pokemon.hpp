@@ -1,3 +1,5 @@
+//Pokemon.hpp 
+//Created by Chris Morse 3/14/22
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
 #include <iostream>
@@ -6,12 +8,14 @@
 using namespace std;
 
 enum TYPES {fire, water, grass, normal, rock, steel, electric, poison, psychic, ice, ground, ghost, flying, fighting, fairy, dragon, dark, bug};
+// types probably will only work/will work best as classes
 
 class Pokemon
 {
 public:
 
     int level;
+	int maxhp;
 	int hp;
 	int speed;
 	int attack;
@@ -25,9 +29,5 @@ public:
     string nickname;
        
 	Pokemon();
-	void setName(string);
-
-
 };
-
 #endif
