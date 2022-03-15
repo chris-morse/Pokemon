@@ -2,6 +2,7 @@
 #define POKEMON_HPP
 #include <iostream>
 #include <string>
+#include <unistd.h>
 using namespace std;
 
 enum TYPES {fire, water, grass, normal, rock, steel, electric, poison, psychic, ice, ground, ghost, flying, fighting, fairy, dragon, dark, bug};
