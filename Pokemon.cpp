@@ -20,8 +20,3 @@ void Pokemon::setName(string n)
 {
 	name = n;
 }
-
-int Pokemon::getHealth() const
-{
-	return hp;
-}

@@ -24,7 +24,6 @@ public:
     string nickname;
        
 	Pokemon();
-	int getHealth() const;
 	void setName(string);
 
 

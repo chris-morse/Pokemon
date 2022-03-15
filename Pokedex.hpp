@@ -44,4 +44,21 @@ public:
 
 };
 
+class Pikachu : public Pokemon
+{
+
+public:
+
+	Pikachu() : Pokemon()
+	{
+		name = "Pikachu";
+		type = electric;
+	}
+
+};
+
+
+//insert as many pokemon as desired
+
+
 #endif
