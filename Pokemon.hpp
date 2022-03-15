@@ -17,7 +17,7 @@ private:
 	int spAttack;
 	int spDefense;
 	
-	
+
 public:
     
     string name;
@@ -25,7 +25,7 @@ public:
        
 	Pokemon();
 	int getHealth() const;
-	
+	void setName(string);
 
 
 
