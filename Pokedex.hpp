@@ -2,16 +2,18 @@
 #define POKEDEX_HPP
 
 #include "Pokemon.hpp"
+using namespace std;
 
 class Chimchar : public Pokemon
 {
 
 public:
 
-	string name = "Chimchar";
-	TYPES type = fire;
-
-	Chimchar();
+	Chimchar() : Pokemon()
+	{
+		name = "Chimchar";
+		type = fire;
+	}
 
 };
 
@@ -20,10 +22,11 @@ class Turtwig : public Pokemon
 
 public:
 
-	string name = "Turtwig";
-	TYPES type = grass;
-
-	Turtwig();
+	Turtwig() : Pokemon()
+	{
+		name = "Turtwig";
+		type = grass;
+	}
 
 };
 
@@ -32,11 +35,13 @@ class Piplup : public Pokemon
 
 public:
 
-	string name = "Piplup";
-	TYPES type = water;
+	Piplup() : Pokemon()
+	{
+		name = "Piplup";
+		type = water;
+	}
 
-	Piplup();
 
 };
-#endif
 
+#endif
