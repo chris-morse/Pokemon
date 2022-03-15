@@ -3,6 +3,7 @@
 
 #include "Pokemon.hpp"
 
+
 Pokemon::Pokemon()
 {
 	level = 1;

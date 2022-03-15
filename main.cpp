@@ -1,6 +1,7 @@
 //Pokemon main.cpp
 // just getting things started right now
-#include "Pokemon.hpp"
+#include "Pokedex.hpp"
+
 using namespace std;
 
 int main(){
@@ -25,11 +26,11 @@ int main(){
 	cin >> enter;
 
 	if(enter == 1)
-		starter.setName("Chimchar");
+		starter = Chimchar();
 	else if(enter == 2)
-		starter.setName("Piplup");
+		starter = Piplup();
 	else if(enter == 3)
-		starter.setName("Turtwig");
+		starter = Turtwig();
 
 
 	cout << "You chose " << starter.name << endl;
