@@ -7,29 +7,44 @@ int main(){
 
 	Pokemon starter;
 	string username;
+	string nickname;
 	int enter;
+	char yn;
 
 	cout << "Welcome to Pokemon" << endl << "Created by Chris Morse" << endl;
 	cout << "What is your name?" << endl;
 	
 	cin >> username;
-	cout << "Hello " << username << ". What starter pokemon would you like?\n";
-	cout << "Starter Pokemon are:" << endl << 
-			"Chimchar	Type: Fire" << endl <<
-		  	"Piplup		Type: Water" << endl <<
-			"Turtwig	Type: Grass" << endl;
-	cout << "Enter 1 for Chimchar, 2 for Piplup, or 3 for Turtwig" << endl;
+	cout << endl << 
+			"Hello Trainer " << username << "." << endl <<
+			"What starter pokemon would you like?" << endl << endl <<
+			"Name		Type		Enter" << endl <<
+			"Chimchar	Fire		1" << endl <<
+		  	"Piplup		Water		2" << endl <<
+			"Turtwig		Grass		3" << endl;
 	cin >> enter;
 
 	if(enter == 1)
 		starter.setName("Chimchar");
 	else if(enter == 2)
 		starter.setName("Piplup");
-	else if(enter == 2)
+	else if(enter == 3)
 		starter.setName("Turtwig");
 
 
 	cout << "You chose " << starter.name << endl;
+	cout << "Would you like to give " << starter.name << " a nickname? Y or N" << endl;
+	cin >> yn;
+	if(yn == 'Y' || yn == 'y')
+	{
+		cout << "Enter nickname: " << endl;
+		cin >> nickname;
+		starter.nickname = nickname;
+	} 
+	else
+		starter.nickname = starter.name;
+
+	cout << "Okay " << username << ". You and " << starter.nickname << " are ready to begin your adventure!" << endl;
 
 
 
