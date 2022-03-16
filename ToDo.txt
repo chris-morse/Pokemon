@@ -26,7 +26,7 @@ leer.attackModifier = 5; //boosts user's attack stat by 5 .
 	4 moves are randomly assigned to a new pokemon. 1 normal attack (i.e. bite, charge, kick idk)
 													1 special attack (fire blast, water ball, grass orgasm, etc.)
 													1 normal other (i.e. charge up, defense ball, leer )
-													1 special other (i.e. google this shit)
+													1 special other (i.e. google this)
 
 -void shop()
 The user visits the shop and can purchase potions, pokeballs, and more. Purchased items go in the inventory
