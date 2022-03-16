@@ -6,6 +6,7 @@ and Quinn Carmack @Quinnito
 Created 3/14/22
 
 Project: Command Line Pokemon remake
+
 Goal: To refine C++ skills
 
 In the early stages of development
