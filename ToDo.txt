@@ -52,3 +52,7 @@ When the user challenges the gym, he battles a series of 3-5 pokemon trainers,
 who increase in difficulty up to the final gym leader. 
 If the player can defeat the gym leader, he wins.
 
+
+//to commit and push to git from terminal
+// git commit -a -m "message here"
+// git push origin main

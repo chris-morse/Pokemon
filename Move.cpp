@@ -30,6 +30,7 @@ Move::Move(string moveName){
 			
 		}
 
+		
 
 		//continue for every move
 
