@@ -5,7 +5,7 @@ Created by Chris Morse and Quinn Carmack
 
 Text-based Pokemon game, to work on C++ skills
 
-To play, download as ZIP and enter
+To play, download as ZIP, unzip, navigate to folder in terminal, and enter
+
 makefile 
-in terminal. Then enter
 ./game 
