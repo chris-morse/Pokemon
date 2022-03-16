@@ -4,10 +4,10 @@
 
 all: game
     
-game: main.o Pokemon.o Move.o
+game: main.o Pokemon.o Move.o functions.o
 	g++ -o game Pokemon.o Move.o main.o 
     
-main.o: main.cpp Player.hpp Pokemon.hpp
+main.o: main.cpp Player.hpp Pokemon.hpp functions.hpp
 	g++ -c main.cpp
 
 Pokemon.o: Pokemon.cpp Pokemon.hpp Move.hpp
