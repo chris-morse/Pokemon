@@ -3,7 +3,6 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 #include "Pokemon.hpp"
-#include <string>
 using namespace std;
 
 class Player
