@@ -1,23 +1,13 @@
 To Do List
 
--array that stores all of the user's pokemon, max 6. 
+DONE-array that stores all of the user's pokemon, max 6.
 	public member of the Player class
 
 -Inventory
 	contains all of the user's items, like potions that heal pokemon or pokeballs to capture pokemon
-	Perhaps inventory could be its own class?
+
 
 -Create the "moves" and semi-randomly assign 4 to each pokemon. 
-Class Move
-
-Move punch;
-punch.damage = 6;
-punch.accuracy = 9;
-
-Move leer;
-leer.accuracy = 10;
-leer.attackModifier = 5; //boosts user's attack stat by 5 .
-
 
 	There are normal attack moves which can be possessed by any and all types of pokemon (punch -normal)
 	There are special (type) attack moves which are possessed by the same type of pokemon as the move. (fire blast -fire)

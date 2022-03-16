@@ -78,7 +78,10 @@ void displayStats(Pokemon poke)
 	"Attack: " << poke.attack << endl <<
 	"Defense: " << poke.defense << endl <<
 	"Special Attack: " << poke.spAttack << endl <<
-	"Special Defense: " << poke.spDefense << endl;
+	"Special Defense: " << poke.spDefense << endl <<
+	"Move 1: " << poke.move[0].name << endl << 
+	"Description: " << poke.move[0].description << endl
+	;
 }
 
 
