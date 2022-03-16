@@ -17,4 +17,4 @@ Move.o: Move.cpp Move.hpp
 	g++ -c Move.cpp
 
 clean:
-	rm main.o Pokemon.o game
+	rm main.o Pokemon.o Move.o game
