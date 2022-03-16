@@ -1,7 +1,7 @@
 To Do List
 
 -array that stores all of the user's pokemon, max 6. 
-	Probably should be a public member of the Player class
+	public member of the Player class
 
 -Inventory
 	contains all of the user's items, like potions that heal pokemon or pokeballs to capture pokemon

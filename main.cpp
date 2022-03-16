@@ -3,7 +3,6 @@
 //Chris Morse & Quinn Carmack 
 //Created 3/14/22
 //Current 3/15/22
-
 #include "Pokemon.hpp"
 #include "Player.hpp"
 using namespace std;
@@ -14,7 +13,8 @@ void displayStats(Pokemon &poke);
 int main(){
 
 	Player player;
-	Pokemon starter;
+	player.myPokemon[0] = Pokemon();
+
 	int enter;
 	char yn;
 
@@ -37,33 +37,33 @@ int main(){
 			"\033[32mTurtwig\033[0m		\033[42;1m Grass \033[0m		  3" << endl << endl;
 			cin >> enter;
 	if(enter == 1)
-		starter = Pokemon("chimchar");
+		player.myPokemon[0] = Pokemon("chimchar");
 	else if(enter == 2)
-		starter = Pokemon("piplup");
+		player.myPokemon[0] = Pokemon("piplup");
 	else if(enter == 3)
-		starter = Pokemon("turtwig");
+		player.myPokemon[0] = Pokemon("turtwig");
 	
 	sleep(1);
-	cout << endl << "You chose " << starter.name << endl << endl;
+	cout << endl << "You chose " << player.myPokemon[0].name << endl << endl;
 	sleep(1);
 	cout << endl << "Great choice!" << endl << endl << endl ;
 	sleep(1);
-	cout << "Would you like to give your " << starter.name << " a nickname? Y or N" << endl;
+	cout << "Would you like to give your " << player.myPokemon[0].name << " a nickname? Y or N" << endl;
 	cin >> yn;
 	sleep(1);
 	if(yn == 'Y' || yn == 'y')
 	{
 		cout << "Enter nickname: " << endl;
-		cin >> starter.nickname;
+		cin >> player.myPokemon[0].nickname;
 	} else{
-		starter.nickname = starter.name; }
+		player.myPokemon[0].nickname = player.myPokemon[0].name; }
 	sleep(1);
-	displayStats(starter);
+	displayStats(player.myPokemon[0]);
 	sleep(1);
 	cout << endl << endl << player.name << "'s Bank Account: $" << player.money << endl;
 	sleep(5);
 	cout << endl << endl <<
-		"Okay " << player.name << ", you and " << starter.nickname << " are ready to begin your adventure!" << endl;
+		"Okay " << player.name << ", you and " << player.myPokemon[0].nickname << " are ready to begin your adventure!" << endl;
 
 
 

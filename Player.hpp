@@ -2,19 +2,20 @@
 //Created by Chris Morse 3/15/22
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
-
+#include "Pokemon.hpp"
 #include <string>
 using namespace std;
 
 class Player
 {
-
 public:
 
 	string name;
 	double money;
 	double wins;
-	
+
+	Pokemon myPokemon[6];
+
 	Player() : money(6.34), wins(0) {}
 
 };
