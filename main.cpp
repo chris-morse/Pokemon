@@ -1,7 +1,7 @@
 //main.cpp 
 //Driver for the entire game
 //Created by Chris Morse 3/14/22
-#include "Pokedex.hpp"
+#include "Pokemon.hpp"
 #include "Player.hpp"
 using namespace std;
 #define underline "\033[4m"
@@ -34,11 +34,11 @@ int main(){
 			"\033[32mTurtwig\033[0m		\033[42;1m Grass \033[0m		  3" << endl << endl;
 			cin >> enter;
 	if(enter == 1)
-		starter = Chimchar();
+		starter = Pokemon("chimchar");
 	else if(enter == 2)
-		starter = Piplup();
+		starter = Pokemon("piplup");
 	else if(enter == 3)
-		starter = Turtwig();
+		starter = Pokemon("turtwig");
 	
 	sleep(1);
 	cout << endl << "You chose " << starter.name << endl << endl;

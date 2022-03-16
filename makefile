@@ -4,14 +4,11 @@
 
 all: game
     
-game: main.o Pokemon.o
-	g++ -o game main.o Pokemon.o
+game: main.o
+	g++ -o game main.o
     
-main.o: main.cpp Pokedex.hpp Player.hpp
+main.o: main.cpp Pokemon.hpp Player.hpp
 	g++ -c main.cpp
     
-Pokemon.o: Pokemon.cpp Pokemon.hpp
-	g++ -c Pokemon.cpp
-    
 clean:
-	rm Pokemon.o main.o game
+	rm main.o game
