@@ -1,5 +1,7 @@
 # Pokemon
-Created by Chris Morse and Quinn Carmack
+Created by Chris Morse @chris-morse 
+
+and Quinn Carmack @Quinnito
 3/14/22
 
 Command Line Pokemon remake, 
