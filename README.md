@@ -1,11 +1,11 @@
 # Pokemon
-Created by Chris Morse @chris-morse 
+by Chris Morse @chris-morse 
 
 and Quinn Carmack @Quinnito
 
-Created 3/14/22
+Created: 3/14/22
 
-Project: Command Line Pokemon remake
+Program: Command Line Pokemon remake
 
 Goal: To refine C++ skills
 
