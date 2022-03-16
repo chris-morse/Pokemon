@@ -1,6 +1,9 @@
 //main.cpp 
-//Driver for the entire game
-//Created by Chris Morse 3/14/22
+//Driver for the Pokemon game
+//Chris Morse & Quinn Carmack 
+//Created 3/14/22
+//Current 3/15/22
+
 #include "Pokemon.hpp"
 #include "Player.hpp"
 using namespace std;
@@ -16,7 +19,7 @@ int main(){
 	char yn;
 
 	cout << endl << endl << endl;
-	cout << "\033[33mWelcome to Pokemon\033[0m" << endl << "Created by Chris Morse" << endl;
+	cout << "\033[33mWelcome to Pokemon\033[0m" << endl << "Created by Chris Morse and Quinnito" << endl;
 	sleep(2);
 	cout << endl << endl << "Hello there! What is your name?" << endl;
 	cin >> player.name;
@@ -65,11 +68,7 @@ int main(){
 
 
 
-
-
-
 }
-
 
 void displayStats(Pokemon &poke)
 {

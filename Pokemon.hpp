@@ -78,7 +78,7 @@ Pokemon::Pokemon(string p){
 		type = electric;
 	}
 
-	if(p == "Bidoof") // 	Bidoof
+	if(p == "bidoof") // 	Bidoof
 	{
 		name = "Bidoof";
 		type = normal;
