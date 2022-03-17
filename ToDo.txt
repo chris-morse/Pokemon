@@ -1,58 +1,83 @@
 To Do List
 
-DONE-array that stores all of the user's pokemon, max 6.
-	public member of the Player class
 
--Inventory
-	contains all of the user's items, like potions that heal pokemon or pokeballs to capture pokemon
+-Expand library of pokemon
+
+		Add more pokemon, currently ~a dozen in the system
 
 
--Create the "moves" and semi-randomly assign 4 to each pokemon. 
+- Expand library of moves
 
-	There are normal attack moves which can be possessed by any and all types of pokemon (punch -normal)
-	There are special (type) attack moves which are possessed by the same type of pokemon as the move. (fire blast -fire)
-	Each pokemon has a normal attack, special (type) attack, and two more moves	
-	Other moves are buffs that increase user stats or decrease enemy stats. These can be normal or specific type moves as well.
-	4 moves are randomly assigned to a new pokemon. 1 normal attack (i.e. bite, charge, kick idk)
-													1 special attack (fire blast, water ball, grass orgasm, etc.)
-													1 normal other (i.e. charge up, defense ball, leer )
-													1 special other (i.e. google this)
+		Add moves, type moves are specific to types of pokemon. (fire moves -> fire pokemon)
+
+
+-Improve Battle function
+
+		Most notably, the defending pokemon's defense stat needs to be considered when determining how much to decrease his hp when being attacked.
+
+		About Battles: 
+			The user and his set of pokemon match up against another pokemon.
+			The user and opposing pokemon take turns selecting moves. The pokemon with the highest speed stat
+			goes first each turn. Speed can increase/decrease during a battle using "other" moves.
+			Instead of picking a move, the player could also select a consumable item from his inventory,
+			like a healing potion or anti-paralysis potion. This will replace his move and end his turn.
+			If the player is battling a wild pokemon, he can also choose to flee, RNG determines if he suceeds in escaping
+			A battle ends when a single opposing pokemon is captured with a pokeball, if the opposing pokemon all faint (hp <= 0)
+			Or if the user's pokemon all faint. The player earns money for a victory, and loses money in a defeat. 
+
+
+
+-Create user Inventory
+
+		contains all of the user's items, like potions that heal pokemon or pokeballs to capture pokemon
+
+
+-Create more moves and semi-randomly assign 4 to each pokemon. 
+
+		There are normal attack moves which can be possessed by any and all types of pokemon (punch -normal)
+		There are special (type) attack moves which are possessed by the same type of pokemon as the move. (fire blast -fire)
+		Each pokemon has a normal attack, special (type) attack, and two more moves	
+		Other moves are buffs that increase user stats or decrease enemy stats. These can be normal or specific type moves as well.
+		4 moves are randomly assigned to a new pokemon. 1 normal attack (i.e. bite, charge, kick idk)
+														1 special attack (fire blast, water ball, grass orgasm, etc.)
+														1 normal other (i.e. charge up, defense ball, leer )
+														1 special other (i.e. google this)
+
 
 -void shop()
-The user visits the shop and can purchase potions, pokeballs, and more. Purchased items go in the inventory
 
--void visit pokemon center
-The user visits the pokemon center where he can heal his damaged or fainted pokemon back to full health.
+		The user visits the shop and can purchase potions, pokeballs, and more. Purchased items go in the inventory
+
 
 -void viewInventory
-The user can view his inventory including his items, stats, and his pokemon and their stats/moves.
-The user can apply potions to his pokemon
 
--void battle(Player p);
-	The user and his set of pokemon match up against another pokemon or set of pokemon.
-	The user and opposing pokemon take turns selecting moves. The pokemon with the highest speed stat
-	goes first each turn. Speed could increased/decreased during a battle using "other" moves.
-	Instead of picking a move, the player could also select a consumable item from his inventory
-	like a healing potion or anti-paralysis potion. This will replace his move and end his turn.
-	If the player is battling a wild pokemon, he can also choose to flee, RNG determines if he suceeded in escaping
-	A battle ends when a single opposing pokemon is captured with a pokeball, if the opposing pokemon all faint (hp <= 0)
-	Or if the user's pokemon all faint. The player earns money for a victory, and loses money for a defeat. 
-	
+		The user can view his inventory including his items, stats, and his pokemon and their stats/moves.
+		The user can apply potions to his pokemon
+
+
+
+
+
+
 -void function to search for pokemon. 
-	The user explores his nearby region and potentially encounters wild pokemon (RNG). 
-	The user must battle() the wild pokemon he encounters. 
-	The user can throw pokeballs at the pokemon it is battling to capture it and add it to his squad (max 6)
-		-RNG for pokeball capture success, odds are higher the lower target pokemon health is. Ideal capture HP is 1-5
+
+		The user explores his nearby region and potentially encounters wild pokemon (RNG). 
+		The user must battle() the wild pokemon he encounters. 
+		The user can throw pokeballs at the pokemon it is battling to capture it and add it to his squad (max 6)
+			-RNG for pokeball capture success, odds are higher the lower target pokemon health is. Ideal capture HP is 1-5
+
 
 
 *** Main Function ***
 In the main function, the player is repeatedly asked to view inventory, search for pokemon, visit the shop, visit the
 pokemon center, challenge other trainers, or challenge the gym. 
+
 When the user challenges the gym, he battles a series of 3-5 pokemon trainers, 
 who increase in difficulty up to the final gym leader. 
 If the player can defeat the gym leader, he wins.
 
 
-//to commit and push to git from terminal
-// git commit -a -m "message here"
-// git push origin main
+//to commit code and push to github from terminal
+
+git commit -a -m "update message in quotes"
+git push origin main
