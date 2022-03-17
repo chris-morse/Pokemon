@@ -3,14 +3,125 @@
 #include "Player.hpp"
 using namespace std;
 
-
 void displayStats(Pokemon poke);
 Pokemon getPokemon();
-void hunt(Player player);
-void PokeCenter(Player player);
+void hunt(Player &player);
+void PokeCenter(Player &player);
+void battle(Player &player, Pokemon &enemy);
+void doMove(Pokemon &offensePoke, Pokemon &defensePoke, Move move);
+
+void battle(Player &player, Pokemon &enemy){
+
+	Pokemon playerPokemon = player.myPokemon[0]; //duplicate so that stats can be boosted 
+												//temporarily during fights with buff/nerf moves
+
+	int input;
+	cout << "You are battling " << enemy.name << "!" << endl;
+	
+	cout << playerPokemon.name << " health: " << playerPokemon.hp << endl << endl;
+	cout << enemy.name << " health: " << enemy.hp << endl << endl;;
+
+	cout << "Moves: " << endl;
+	cout << playerPokemon.move[0].name << endl;
+	cout << playerPokemon.move[1].name << endl;
+	cout << playerPokemon.move[2].name << endl;
+	cout << playerPokemon.move[3].name << endl << endl;
+
+	bool doesWork;
+	int num; //RNG
+	while(playerPokemon.hp > 0 && enemy.hp > 0){
+		cout << "Enter your move: (1-4)" << endl;
+		cin >> input;
+		
+		Move userMove = playerPokemon.move[input-1];
+
+		int num = rand() % 4; //randomly picks enemy move
+		Move enemyMove = enemy.move[num];
+	
+		if(playerPokemon.speed > enemy.speed)
+		{
+			doMove(playerPokemon, enemy, playerPokemon.move[num]);
+
+		}else if (playerPokemon.speed < enemy.speed)
+		{
+			doMove(enemy, playerPokemon, enemy.move[num]);
+		}else{
+			num = rand() % 2;
+			if (num = 1)
+				doMove(playerPokemon, enemy, playerPokemon.move[num]);
+			else
+				doMove(enemy, playerPokemon, enemy.move[num]);
+			}
+			
+	}
+
+
+
+
+
+}
+
+
+
+
+void doMove(Pokemon &attackPoke, Pokemon &defendPoke, Move move)
+{
+	if(rand()%100 > move.accuracy){
+		cout << attackPoke.name << " missed!" << endl;
+		return;
+	}
+		
+	cout << attackPoke.nickname << " did " << move.name << "!";
+	
+	if(move.moveType == spAttack){
+		//Type comparisons, check if attackPoke.type is weak/strong against that move.
+		defendPoke.hp -= move.modifier; 
+
+	}
+
+	if(move.moveType == attack)
+		defendPoke.hp -= move.modifier;
+
+	if(move.moveType == attackBuff)
+		attackPoke.attack += move.modifier;
+
+	if(move.moveType == speedBuff)
+		attackPoke.speed += move.modifier;
+	
+	if(move.moveType == defenseBuff)
+		attackPoke.defense += move.modifier;
+
+	if(move.moveType == spAttackBuff)
+		attackPoke.spAttack += move.modifier;
+
+	if(move.moveType == spDefenseBuff)
+		attackPoke.spDefense += move.modifier;
+
+	if(move.moveType == attackNerf)
+		defendPoke.attack -= move.modifier;
+
+	if(move.moveType == defenseNerf)
+		defendPoke.defense -= move.modifier;
+
+	if(move.moveType == speedNerf)
+		defendPoke.speed -= move.modifier;
+
+	if(move.moveType == spAttackNerf)
+		defendPoke.spAttack -= move.modifier;
+
+	if(move.moveType == spDefenseNerf)
+		defendPoke.spDefense -= move.modifier;
+
+}
+
+
+
+
+
+
 
 //Search the area for wild pokemon.
-void hunt(Player player)
+void hunt(Player &player)
 {
 sleep(1);
 	cout << endl << "You begin searching for wild pokemon" << endl;
@@ -76,7 +187,8 @@ Pokemon getPokemon(){
 	return newPoke;
 }
 
-void PokeCenter(Player player){
+//Visit the PokeCenter and heal pokemon
+void PokeCenter(Player &player){
 	char yn;
 	cout << endl << "Welcome to the PokeCenter. Would you like to heal your pokemon?" << endl;
 	cin >> yn;
@@ -98,10 +210,11 @@ void PokeCenter(Player player){
 	}
 }
 
+//Display a Pokemon's stats
 void displayStats(Pokemon poke)
 {
 	cout << endl << endl << 
-	"\033[4m" << poke.nickname << ":\033[0m" << "  Level " << poke.level << endl << 
+	"\033[4m" << poke.nickname << "\033[0m" << "  (" << poke.name << ")  Level " << poke.level << endl << 
 	"Max Hp: " << poke.maxhp << endl <<
 	"Speed: " << poke.speed << endl <<
 	"Attack: " << poke.attack << endl <<
@@ -110,7 +223,6 @@ void displayStats(Pokemon poke)
 	"Special Defense: " << poke.spDefense << endl <<
 	"Move 1: " << poke.move[0].name << endl << 
 	"Description: " << poke.move[0].description << endl ;
-
 
 }
 

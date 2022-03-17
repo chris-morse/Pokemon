@@ -4,6 +4,7 @@ using namespace std;
 Pokemon::Pokemon(){
 
 	level = 1;
+	exp = 0;
 	maxhp = 20;
 	hp = 20;
 	speed = 10;
@@ -18,6 +19,7 @@ Pokemon::Pokemon(string p){
 
 	{							// default stats
 		level = 1;
+		exp = 0;
 		maxhp = 20;
 		hp = 20;
 		speed = 10;
@@ -87,6 +89,7 @@ Pokemon::Pokemon(string p){
 
 		if(type == fire)
 		{
+
 			//Move 2 = random fire attack move
 			//Move 3 = random fire other
 

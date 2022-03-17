@@ -9,9 +9,9 @@ Move::Move(){
 Move::Move(string moveName){
 
 	{												// all moves
-		if (moveName == "punch") // 	punch
+		if (moveName == "pound") // 	pound
 		{	//Decreases opponent's hp
-			name = "Punch";
+			name = "Pound";
 			description = "Fiercely strikes the opponent";
 			type = normal;
 			moveType = attack;
@@ -30,7 +30,7 @@ Move::Move(string moveName){
 			
 		}
 
-		
+
 
 		//continue for every move
 

@@ -62,7 +62,7 @@ sleep(1);
 sleep(1);
 	cout << "Would you like to give your " << player.myPokemon[0].name << " a nickname? Y or N" << endl;
 	cin >> yn;
-sleep(1);
+sleep(1); 
 	if(yn == 'Y' || yn == 'y')
 	{
 		cout << "Enter nickname: " << endl;

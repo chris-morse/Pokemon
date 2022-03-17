@@ -16,6 +16,7 @@ class Pokemon
 public:
 
     int level;
+	int exp;
 	int maxhp;
 	int hp;
 	int speed;
@@ -34,6 +35,5 @@ public:
 	Pokemon();
 	Pokemon(string);
 };
-
 
 #endif
