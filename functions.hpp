@@ -14,47 +14,95 @@ void battle(Player &player, Pokemon &enemy){
 
 	Pokemon playerPokemon = player.myPokemon[0]; //duplicate so that stats can be boosted 
 												//temporarily during fights with buff/nerf moves
-
 	int input;
-	cout << "You are battling " << enemy.name << "!" << endl;
-	
-	cout << playerPokemon.name << " health: " << playerPokemon.hp << endl << endl;
-	cout << enemy.name << " health: " << enemy.hp << endl << endl;;
-
-	cout << "Moves: " << endl;
-	cout << playerPokemon.move[0].name << endl;
-	cout << playerPokemon.move[1].name << endl;
-	cout << playerPokemon.move[2].name << endl;
-	cout << playerPokemon.move[3].name << endl << endl;
-
-	bool doesWork;
 	int num; //RNG
+	
 	while(playerPokemon.hp > 0 && enemy.hp > 0){
-		cout << "Enter your move: (1-4)" << endl;
+
+		cout << endl;
+		cout << playerPokemon.name << " health: " << playerPokemon.hp << endl << endl;
+		cout << enemy.name << " health: " << enemy.hp << endl << endl;;
+
+		cout << "Moves: " << endl;
+		cout <<	"1. " << playerPokemon.move[0].name << endl;
+		cout << "2. " << playerPokemon.move[1].name << endl;
+		cout << "3. " << playerPokemon.move[2].name << endl;
+		cout << "4. " << playerPokemon.move[3].name << endl << endl;
+
+		cout << "Enter move 1-4:" << endl;
 		cin >> input;
-		
+	sleep(1);
 		Move userMove = playerPokemon.move[input-1];
 
 		int num = rand() % 4; //randomly picks enemy move
 		Move enemyMove = enemy.move[num];
 	
-		if(playerPokemon.speed > enemy.speed)
+		if(playerPokemon.speed > enemy.speed) // Highest speed goes first every time
 		{
-			doMove(playerPokemon, enemy, playerPokemon.move[num]);
+			doMove(playerPokemon, enemy, userMove);
+				if(playerPokemon.hp < 1 || enemy.hp < 1)
+					break;
+			sleep(1);
+			doMove(enemy, playerPokemon, enemyMove);
+				if(playerPokemon.hp < 1 || enemy.hp < 1)
+					break;
+			sleep(1);
 
 		}else if (playerPokemon.speed < enemy.speed)
 		{
-			doMove(enemy, playerPokemon, enemy.move[num]);
-		}else{
+			doMove(enemy, playerPokemon, enemyMove);
+				if(playerPokemon.hp < 1 || enemy.hp < 1)
+					break;
+			sleep(1);
+			doMove(playerPokemon, enemy, userMove);
+				if(playerPokemon.hp < 1 || enemy.hp < 1)
+					break;
+			sleep(1);
+		}else
+		{
 			num = rand() % 2;
-			if (num = 1)
-				doMove(playerPokemon, enemy, playerPokemon.move[num]);
-			else
-				doMove(enemy, playerPokemon, enemy.move[num]);
+			if (num == 1)
+			{
+				doMove(playerPokemon, enemy, userMove);
+					if(playerPokemon.hp < 1 || enemy.hp < 1)
+						break;
+				sleep(1);
+				doMove(enemy, playerPokemon, enemyMove);
+					if(playerPokemon.hp < 1 || enemy.hp < 1)
+						break;
+				sleep(1);
 			}
+			else
+			{
+				doMove(enemy, playerPokemon, enemyMove);
+					if(playerPokemon.hp < 1 || enemy.hp < 1)
+						break;
+				sleep(1);
+				doMove(playerPokemon, enemy, userMove);
+					if(playerPokemon.hp < 1 || enemy.hp < 1)
+						break;
+				sleep(1);
+			}
+		}
 			
+
+	}//while still alive
+
+	player.myPokemon[0].hp = playerPokemon.hp; //transfer the hp from the battle-tested clone back to the original pokemon
+
+	if(enemy.hp < 1)
+	{
+		cout << enemy.name << " was defeated by " << player.name << "!" << endl;
+
+	}else
+	{
+
+		cout << player.name << " was defeated by " << enemy.name << "!" << endl;
+		cout << player.myPokemon[0].name << " health: " << player.myPokemon[0].hp << endl;
+
 	}
 
+	
 
 
 
@@ -71,12 +119,13 @@ void doMove(Pokemon &attackPoke, Pokemon &defendPoke, Move move)
 		return;
 	}
 		
-	cout << attackPoke.nickname << " did " << move.name << "!";
+	cout << attackPoke.nickname << " did " << move.name << "!" << endl << endl;
+
 	
 	if(move.moveType == spAttack){
 		//Type comparisons, check if attackPoke.type is weak/strong against that move.
+		//But for now,
 		defendPoke.hp -= move.modifier; 
-
 	}
 
 	if(move.moveType == attack)
@@ -111,21 +160,14 @@ void doMove(Pokemon &attackPoke, Pokemon &defendPoke, Move move)
 
 	if(move.moveType == spDefenseNerf)
 		defendPoke.spDefense -= move.modifier;
-
 }
-
-
-
-
-
-
 
 //Search the area for wild pokemon.
 void hunt(Player &player)
 {
 sleep(1);
 	cout << endl << "You begin searching for wild pokemon" << endl;
-	sleep(1);
+sleep(1);
 	for (int i = 0; i < 3; i++){
 		
 		cout << ". ";	
@@ -140,7 +182,7 @@ sleep(2);
 	cout << "Time to battle!" << endl;
 sleep(1);
 	cout << endl << "-battle here-" << endl << endl;
-	//battle(wildPokemon);
+	battle(player, wildPokemon);
 }
 
 //Generate a random Pokemon

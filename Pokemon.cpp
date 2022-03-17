@@ -36,6 +36,9 @@ Pokemon::Pokemon(string p){
 			name = "Chimchar";
 			type = fire;
 			move[0] = Move("leer");
+			move[1] = Move("pound");
+			move[2] = Move("pound");
+			move[3] = Move("pound");
 		}
 		if(p == "turtwig") // 	Turtwig
 		{
@@ -80,7 +83,7 @@ Pokemon::Pokemon(string p){
 		}
 	
 	} //pokemon
-
+		nickname = name;
 
 	{							// get moves
 		//Move 1 = random normal attack move
