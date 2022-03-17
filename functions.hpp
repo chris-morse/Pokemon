@@ -10,16 +10,23 @@ void PokeCenter(Player &player);
 void battle(Player &player, Pokemon &enemy);
 void doMove(Pokemon &offensePoke, Pokemon &defensePoke, Move move);
 
-void battle(Player &player, Pokemon &enemy){
+void battle(Player &player, Pokemon &enemy)
+{
 
 	Pokemon playerPokemon = player.myPokemon[0]; //duplicate so that stats can be boosted 
 												//temporarily during fights with buff/nerf moves
 	int input;
 	int num; //RNG
 	
-	while(playerPokemon.hp > 0 && enemy.hp > 0){
+	
 
-		cout << endl;
+	while(playerPokemon.hp > 0 && enemy.hp > 0){
+	
+		cout << "\x1B[2J\x1B[H";
+		cout << "--------------------" << endl <<
+				"       BATTLE       " << endl <<
+				"--------------------" << endl << endl;
+
 		cout << playerPokemon.name << " health: " << playerPokemon.hp << endl << endl;
 		cout << enemy.name << " health: " << enemy.hp << endl << endl;;
 
@@ -29,9 +36,10 @@ void battle(Player &player, Pokemon &enemy){
 		cout << "3. " << playerPokemon.move[2].name << endl;
 		cout << "4. " << playerPokemon.move[3].name << endl << endl;
 
-		cout << "Enter move 1-4:" << endl;
+		cout << "Enter move 1-4:  ";
 		cin >> input;
-	sleep(1);
+		cout << endl << endl << endl;
+	sleep(3);
 		Move userMove = playerPokemon.move[input-1];
 
 		int num = rand() % 4; //randomly picks enemy move
@@ -42,22 +50,22 @@ void battle(Player &player, Pokemon &enemy){
 			doMove(playerPokemon, enemy, userMove);
 				if(playerPokemon.hp < 1 || enemy.hp < 1)
 					break;
-			sleep(1);
+			sleep(2);
 			doMove(enemy, playerPokemon, enemyMove);
 				if(playerPokemon.hp < 1 || enemy.hp < 1)
 					break;
-			sleep(1);
+			
 
 		}else if (playerPokemon.speed < enemy.speed)
 		{
 			doMove(enemy, playerPokemon, enemyMove);
 				if(playerPokemon.hp < 1 || enemy.hp < 1)
 					break;
-			sleep(1);
+			sleep(2);
 			doMove(playerPokemon, enemy, userMove);
 				if(playerPokemon.hp < 1 || enemy.hp < 1)
 					break;
-			sleep(1);
+			
 		}else
 		{
 			num = rand() % 2;
@@ -66,26 +74,24 @@ void battle(Player &player, Pokemon &enemy){
 				doMove(playerPokemon, enemy, userMove);
 					if(playerPokemon.hp < 1 || enemy.hp < 1)
 						break;
-				sleep(1);
+				sleep(2);
 				doMove(enemy, playerPokemon, enemyMove);
 					if(playerPokemon.hp < 1 || enemy.hp < 1)
 						break;
-				sleep(1);
+		
 			}
 			else
 			{
 				doMove(enemy, playerPokemon, enemyMove);
 					if(playerPokemon.hp < 1 || enemy.hp < 1)
 						break;
-				sleep(1);
+				sleep(2);
 				doMove(playerPokemon, enemy, userMove);
 					if(playerPokemon.hp < 1 || enemy.hp < 1)
 						break;
-				sleep(1);
 			}
 		}
-			
-
+	sleep(5);
 	}//while still alive
 
 	player.myPokemon[0].hp = playerPokemon.hp; //transfer the hp from the battle-tested clone back to the original pokemon
@@ -105,67 +111,89 @@ void battle(Player &player, Pokemon &enemy){
 	
 
 
-
-
 }
-
-
 
 
 void doMove(Pokemon &attackPoke, Pokemon &defendPoke, Move move)
 {
 	if(rand()%100 > move.accuracy){
-		cout << attackPoke.name << " missed!" << endl;
+		cout << attackPoke.name << " missed!" << endl << endl << endl;
 		return;
 	}
 		
 	cout << attackPoke.nickname << " did " << move.name << "!" << endl << endl;
+	sleep(2);
 
-	
-	if(move.moveType == spAttack){
-		//Type comparisons, check if attackPoke.type is weak/strong against that move.
-		//But for now,
-		defendPoke.hp -= move.modifier; 
+	{										//moves
+		if(move.moveType == spAttack){
+			//Type comparisons, check if attackPoke.type is weak/strong against that move.
+			//But for now,
+			defendPoke.hp -= move.modifier;
+			cout << defendPoke.nickname << " lost " << move.modifier << " health points!" << endl;
+			cout << defendPoke.nickname << " health: " << defendPoke.hp << endl;
+		}
+
+		if(move.moveType == attack){
+			defendPoke.hp -= move.modifier;
+			cout << defendPoke.nickname << " lost " << move.modifier << " health points!" << endl;
+			sleep(1);
+			cout << defendPoke.nickname << " health: " << defendPoke.hp << endl;
+
+		}
+
+		if(move.moveType == attackBuff){
+			attackPoke.attack += move.modifier;
+			cout << attackPoke.nickname << "'s attack rose sharply! " << endl;
+		}
+
+		if(move.moveType == speedBuff) {
+			attackPoke.speed += move.modifier;
+			cout << attackPoke.nickname << "'s speed rose sharply! " << endl;
+		}
+		if(move.moveType == defenseBuff) {
+			attackPoke.defense += move.modifier;
+			cout << attackPoke.nickname << "'s defense rose sharply! " << endl;
+		}
+		if(move.moveType == spAttackBuff) {
+			attackPoke.spAttack += move.modifier;
+			cout << attackPoke.nickname << "'s special attack rose sharply! " << endl;
+		}
+
+		if(move.moveType == spDefenseBuff) {
+			attackPoke.spDefense += move.modifier;
+			cout << attackPoke.nickname << "'s special defense rose sharply! " << endl;
+		
+		}
+		if(move.moveType == attackNerf) {
+			defendPoke.attack -= move.modifier;
+			cout << defendPoke.nickname << "'s attack fell sharply! " << endl;
+		}
+		if(move.moveType == defenseNerf){
+			defendPoke.defense -= move.modifier;
+			cout << defendPoke.nickname << "'s defense fell sharply! " << endl;
+		}
+		if(move.moveType == speedNerf){
+			defendPoke.speed -= move.modifier;
+			cout << defendPoke.nickname << "'s speed fell sharply! " << endl;
+		}
+
+		if(move.moveType == spAttackNerf){
+			defendPoke.spAttack -= move.modifier;
+			cout << defendPoke.nickname << "'s special attack fell sharply! " << endl;
+		}
+		if(move.moveType == spDefenseNerf){
+			defendPoke.spDefense -= move.modifier;
+			cout << defendPoke.nickname << "'s special defense fell sharply! " << endl;
+		}
+
+		cout << endl << endl;
 	}
-
-	if(move.moveType == attack)
-		defendPoke.hp -= move.modifier;
-
-	if(move.moveType == attackBuff)
-		attackPoke.attack += move.modifier;
-
-	if(move.moveType == speedBuff)
-		attackPoke.speed += move.modifier;
-	
-	if(move.moveType == defenseBuff)
-		attackPoke.defense += move.modifier;
-
-	if(move.moveType == spAttackBuff)
-		attackPoke.spAttack += move.modifier;
-
-	if(move.moveType == spDefenseBuff)
-		attackPoke.spDefense += move.modifier;
-
-	if(move.moveType == attackNerf)
-		defendPoke.attack -= move.modifier;
-
-	if(move.moveType == defenseNerf)
-		defendPoke.defense -= move.modifier;
-
-	if(move.moveType == speedNerf)
-		defendPoke.speed -= move.modifier;
-
-	if(move.moveType == spAttackNerf)
-		defendPoke.spAttack -= move.modifier;
-
-	if(move.moveType == spDefenseNerf)
-		defendPoke.spDefense -= move.modifier;
 }
 
 //Search the area for wild pokemon.
 void hunt(Player &player)
 {
-sleep(1);
+	cout << "\x1B[2J\x1B[H";
 	cout << endl << "You begin searching for wild pokemon" << endl;
 sleep(1);
 	for (int i = 0; i < 3; i++){
@@ -180,8 +208,7 @@ sleep(1);
 	cout << endl << endl << "You encountered a wild " << wildPokemon.name << "!" << endl;
 sleep(2);
 	cout << "Time to battle!" << endl;
-sleep(1);
-	cout << endl << "-battle here-" << endl << endl;
+sleep(2);
 	battle(player, wildPokemon);
 }
 
@@ -232,12 +259,13 @@ Pokemon getPokemon(){
 //Visit the PokeCenter and heal pokemon
 void PokeCenter(Player &player){
 	char yn;
+	cout << "\x1B[2J\x1B[H";
 	cout << endl << "Welcome to the PokeCenter. Would you like to heal your pokemon?" << endl;
 	cin >> yn;
 	if(yn == 'Y' || yn == 'y')
 	{
 		sleep(1);
-		cout << "Okay. Healing your Pokemon for you now." << endl;
+		cout << endl << endl << "Okay. Healing your Pokemon for you now." << endl << endl;
 		for (int i = 0; i < 6; i++)
 		{
 			cout << ". ";
@@ -245,7 +273,7 @@ void PokeCenter(Player &player){
 			sleep(1);
 			player.myPokemon[i].hp = player.myPokemon[i].maxhp; 
 		}
-		cout << endl << "Pokemon healed. Have a great day Trainer " << player.name << "!";
+		cout << endl << endl << "Pokemon healed. Have a great day Trainer " << player.name << "!";
 		
 	} else{
 		cout << "Thank you for visiting the PokeCenter!" << endl;
@@ -255,16 +283,31 @@ void PokeCenter(Player &player){
 //Display a Pokemon's stats
 void displayStats(Pokemon poke)
 {
+	cout << "\x1B[2J\x1B[H";
 	cout << endl << endl << 
-	"\033[4m" << poke.nickname << "\033[0m" << "  (" << poke.name << ")  Level " << poke.level << endl << 
+	"---------------" << endl <<
+	"    " <<  poke.nickname  << "    " << endl <<
+	"---------------" << endl <<
+	poke.name << endl <<
+	"Level: " << poke.level << endl << 
 	"Max Hp: " << poke.maxhp << endl <<
 	"Speed: " << poke.speed << endl <<
 	"Attack: " << poke.attack << endl <<
 	"Defense: " << poke.defense << endl <<
 	"Special Attack: " << poke.spAttack << endl <<
-	"Special Defense: " << poke.spDefense << endl <<
+	"Special Defense: " << poke.spDefense << endl << endl <<
+	
 	"Move 1: " << poke.move[0].name << endl << 
-	"Description: " << poke.move[0].description << endl ;
+	"Description: " << poke.move[0].description << endl <<
+
+	"Move 2: " << poke.move[1].name << endl << 
+	"Description: " << poke.move[1].description << endl <<
+
+	"Move 3: " << poke.move[2].name << endl << 
+	"Description: " << poke.move[2].description << endl <<
+
+	"Move 4: " << poke.move[3].name << endl << 
+	"Description: " << poke.move[3].description << endl ;
 
 }
 

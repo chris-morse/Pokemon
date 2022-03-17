@@ -19,6 +19,18 @@ Move::Move(string moveName){
 			accuracy = 90;
 		}
 
+		if (moveName == "pound") // 	pound
+		{	//Decreases opponent's hp
+			name = "Pound";
+			description = "Fiercely strikes the opponent";
+			type = normal;
+			moveType = attack;
+			modifier = 6;
+			accuracy = 90;
+		}
+
+
+
 		if (moveName == "leer") // 		leer
 		{	//Decreases opponent's defense
 			name = "Leer";
