@@ -95,17 +95,22 @@ void battle(Player &player, Pokemon &enemy)
 	}//while still alive
 
 	player.myPokemon[0].hp = playerPokemon.hp; //transfer the hp from the battle-tested clone back to the original pokemon
+	double money;
 
 	if(enemy.hp < 1)
 	{
+		money = 100;
 		cout << enemy.name << " was defeated by " << player.name << "!" << endl;
-
-	}else
+		cout << player.name << " earned $" << money << endl;
+		player.money += money;
+	}
+	else
 	{
-
+		money = 75;
 		cout << player.name << " was defeated by " << enemy.name << "!" << endl;
 		cout << player.myPokemon[0].name << " health: " << player.myPokemon[0].hp << endl;
-
+		cout << player.name << " lost $" << money << endl;
+		player.money -= money;
 	}
 
 	

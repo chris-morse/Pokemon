@@ -4,6 +4,7 @@ To Do List
 -Expand library of pokemon
 
 		Add more pokemon, currently ~a dozen in the system
+		once many pokemon are added, update getPokemon function to randomly select a pokemon from the library
 
 
 - Expand library of moves
