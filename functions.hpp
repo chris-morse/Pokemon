@@ -10,6 +10,9 @@ void PokeCenter(Player &player);
 void battle(Player &player, Pokemon &enemy);
 void doMove(Pokemon &offensePoke, Pokemon &defensePoke, Move move);
 
+
+
+
 void battle(Player &player, Pokemon &enemy)
 {
 
@@ -19,7 +22,6 @@ void battle(Player &player, Pokemon &enemy)
 	int num; //RNG
 	
 	
-
 	while(playerPokemon.hp > 0 && enemy.hp > 0){
 	
 		cout << "\x1B[2J\x1B[H";
@@ -125,10 +127,9 @@ void doMove(Pokemon &attackPoke, Pokemon &defendPoke, Move move)
 		cout << attackPoke.name << " missed!" << endl << endl << endl;
 		return;
 	}
-		
 	cout << attackPoke.nickname << " did " << move.name << "!" << endl << endl;
-	sleep(2);
 
+/*
 	{										//moves
 		if(move.moveType == spAttack){
 			//Type comparisons, check if attackPoke.type is weak/strong against that move.
@@ -147,16 +148,9 @@ void doMove(Pokemon &attackPoke, Pokemon &defendPoke, Move move)
 		}
 
 		if(move.moveType == attackBuff){
-			attackPoke.attack += move.modifier;
-			cout << attackPoke.nickname << "'s attack rose sharply! " << endl;
-		}
-
-		if(move.moveType == speedBuff) {
-			attackPoke.speed += move.modifier;
-			cout << attackPoke.nickname << "'s speed rose sharply! " << endl;
-		}
-		if(move.moveType == defenseBuff) {
-			attackPoke.defense += move.modifier;
+			attackPoke.a
+	
+	ke.defense += move.modifier;
 			cout << attackPoke.nickname << "'s defense rose sharply! " << endl;
 		}
 		if(move.moveType == spAttackBuff) {
@@ -193,6 +187,7 @@ void doMove(Pokemon &attackPoke, Pokemon &defendPoke, Move move)
 
 		cout << endl << endl;
 	}
+	*/
 }
 
 //Search the area for wild pokemon.
@@ -276,7 +271,7 @@ void PokeCenter(Player &player){
 			cout << ". ";
 			cout.flush();
 			sleep(1);
-			player.myPokemon[i].hp = player.myPokemon[i].maxhp; 
+			player.myPokemon[i].hp = player.myPokemon[i].maxHp; 
 		}
 		cout << endl << endl << "Pokemon healed. Have a great day Trainer " << player.name << "!";
 		
@@ -295,12 +290,12 @@ void displayStats(Pokemon poke)
 	"---------------" << endl <<
 	poke.name << endl <<
 	"Level: " << poke.level << endl << 
-	"Max Hp: " << poke.maxhp << endl <<
+	"Max Hp: " << poke.maxHp << endl <<
 	"Speed: " << poke.speed << endl <<
 	"Attack: " << poke.attack << endl <<
 	"Defense: " << poke.defense << endl <<
-	"Special Attack: " << poke.spAttack << endl <<
-	"Special Defense: " << poke.spDefense << endl << endl <<
+	"Special Attack: " << poke.specialAttack << endl <<
+	"Special Defense: " << poke.specialDefense << endl << endl <<
 	
 	"Move 1: " << poke.move[0].name << endl << 
 	"Description: " << poke.move[0].description << endl <<

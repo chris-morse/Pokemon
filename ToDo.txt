@@ -21,7 +21,12 @@ To Do List
 			The user and opposing pokemon take turns selecting moves. The pokemon with the highest speed stat
 			goes first each turn. Speed can increase/decrease during a battle using "other" moves.
 			Instead of picking a move, the player could also select a consumable item from his inventory,
-			like a healing potion or anti-paralysis potion. This will replace his move and end his turn.
+			like a healing potion or anti-paralPokemon.hpp 
+//Created by Chris Morse 3/14/22
+/**
+ * This file stores the logisitics for the Pokemon object. 
+ */
+#ifndef POKEMONysis potion. This will replace his move and end his turn.
 			If the player is battling a wild pokemon, he can also choose to flee, RNG determines if he suceeds in escaping
 			A battle ends when a single opposing pokemon is captured with a pokeball, if the opposing pokemon all faint (hp <= 0)
 			Or if the user's pokemon all faint. The player earns money for a victory, and loses money in a defeat. 

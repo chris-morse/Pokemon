@@ -19,16 +19,18 @@ class Pokemon
 public:
 
     int level;
-	int exp;
-	int maxhp;
+	int experience;
 	int hp;
+	int maxHp;
+	string type;
+
+	////// Base stats ////
 	int speed;
 	int attack;
 	int defense;
-	int spAttack;
-	int spDefense;
-
-	TYPES type;
+	int specialAttack;
+	int specialDefense;
+	//////////////////////
 
     string name;
     string nickname;

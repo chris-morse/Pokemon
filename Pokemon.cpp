@@ -1,120 +1,113 @@
 #include "Pokemon.hpp"
 using namespace std;
 
-Pokemon::Pokemon(){
-
+// This initializies a pokemon with defualt stats
+Pokemon::Pokemon()
+{
 	level = 1;
-	exp = 0;
-	maxhp = 20;
+	experience = 0;
+	maxHp = 20;
 	hp = 20;
 	speed = 10;
 	attack = 10;
 	defense = 10;
-	spAttack = 10;
-	spDefense = 10;
-
+	specialAttack = 10;
+	specialDefense = 10;
 }
 
-Pokemon::Pokemon(string p){
+Pokemon::Pokemon(string p) {
+	// default stats
+	Pokemon();
+	
+	// all pokemon
+	if(p == "chimchar") // 	Chimchar
+	{
+		name = "Chimchar";
+		type = "fire";
+		move[0] = Move("leer");
+		move[1] = Move("pound");
+		move[2] = Move("pound");
+		move[3] = Move("fireSpray");
+	}
+	if(p == "turtwig") // 	Turtwig
+	{
+		name = "Turtwig";
+		type = "grass";
+	}
+	if(p == "piplup") // 	Piplup
+	{
+		name = "Piplup";
+		type = "water";
+	}
 
-	{							// default stats
-		level = 1;
-		exp = 0;
-		maxhp = 20;
-		hp = 20;
-		speed = 10;
-		attack = 10;
-		defense = 10;
-		spAttack = 10;
-		spDefense = 10;
+	if(p == "pikachu")  // 	Pikachu
+	{
+		name = "Pikachu";
+		type = "electric";
+	}
+	if(p == "bidoof") // 	Bidoof
+	{
+		name = "Bidoof";
+		type = "normal";
+	}
+	if(p == "cranidos") //	Cranidos
+	{
+		name = "Cranidos";
+		type = "rock";
+	}
+	if(p == "buizel") //	Buizel
+	{
+		name = "Buizel";
+		type = "water";
+	}
+	if(p == "starly") //	Starly
+	{
+		name = "Starly";
+		type = "flying";
+	}
+	if(p == "ralts") //		Ralts
+	{
+		name = "Ralts";
+		type = "psychic";
 	}
 	
 	
-	{ 							// all pokemon
-		if(p == "chimchar") // 	Chimchar
-		{
-			name = "Chimchar";
-			type = fire;
-			move[0] = Move("leer");
-			move[1] = Move("pound");
-			move[2] = Move("pound");
-			move[3] = Move("pound");
-		}
-		if(p == "turtwig") // 	Turtwig
-		{
-			name = "Turtwig";
-			type = grass;
-		}
-		if(p == "piplup") // 	Piplup
-		{
-			name = "Piplup";
-			type = water;
-		}
-	
-		if(p == "pikachu")  // 	Pikachu
-		{
-			name = "Pikachu";
-			type = electric;
-		}
-		if(p == "bidoof") // 	Bidoof
-		{
-			name = "Bidoof";
-			type = normal;
-		}
-		if(p == "cranidos") //	Cranidos
-		{
-			name = "Cranidos";
-			type = rock;
-		}
-		if(p == "buizel") //	Buizel
-		{
-			name = "Buizel";
-			type = water;
-		}
-		if(p == "starly") //	Starly
-		{
-			name = "Starly";
-			type = flying;
-		}
-		if(p == "ralts") //		Ralts
-		{
-			name = "Ralts";
-			type = psychic;
-		}
-	
-	} //pokemon
-		nickname = name;
+	nickname = name;
 
-	{							// get moves
+
+
+
+
+							// get moves
 		//Move 1 = random normal attack move
 		//Move 4 = random normal other move
 
 
-		if(type == fire)
-		{
+	if(type == "fire")
+	{
 
-			//Move 2 = random fire attack move
-			//Move 3 = random fire other
-
-		}
-		if(type == water)
-		{
-			//Move 2 = random water attack move
-			//Move 3 = random water other
-
-		}
-		if(type == grass)
-		{
-			//Move 2 = random grass attack move
-			//Move 3 = random grass other
-			
-		}
-
-
-
-
+		//Move 2 = random fire attack move
+		//Move 3 = random fire other
 
 	}
+	if(type == "water")
+	{
+		//Move 2 = random water attack move
+		//Move 3 = random water other
+
+	}
+	if(type == "grass")
+	{
+		//Move 2 = random grass attack move
+		//Move 3 = random grass other
+		
+	}
+
+
+
+
+
+	
 
 }
 

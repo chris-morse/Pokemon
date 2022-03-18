@@ -34,16 +34,11 @@ int main(){
 
 	cout << endl << endl << endl;
 	cout << "\033[33mWelcome to Pokemon\033[0m" << endl << "Created by Chris Morse and Quinnito" << endl;
-sleep(2);
 	cout << endl << endl << "Hello Trainer! What is your name?" << endl << endl;
 	cin >> player.name;
-sleep(1);
 	cout << endl << "Greetings Trainer " << player.name << "!" << endl << endl;
-sleep(2);
 	cout <<	"It's time to make a very important decision." << endl << endl;
-sleep(2);
 	cout << "What starter pokemon would you like?" << endl << endl << endl;
-sleep(2);
 	cout <<
 			"Name		Type		\033[5mEnter:\033[0m" << endl << endl <<
 			"\033[31mChimchar\033[0m	\033[41;1m Fire \033[0m		  1" << endl << endl <<
@@ -58,33 +53,23 @@ sleep(2);
 	else if(enter == 3)
 		player.myPokemon[0] = Pokemon("turtwig");
 	cout << "\x1B[2J\x1B[H";
-sleep(1);
 	cout << endl << "You chose " << player.myPokemon[0].name << endl << endl;
-sleep(1);
 	cout << endl << "Great choice!" << endl << endl << endl ;
-sleep(2);
 	cout << "Would you like to give your " << player.myPokemon[0].name << " a nickname? Y or N" << endl;
 	cin >> yn;
-sleep(1); 
 	if(yn == 'Y' || yn == 'y')
 	{
 		cout << endl << "Enter nickname: " << endl;
 		cin >> player.myPokemon[0].nickname;
 	}
-sleep(1);
 	displayStats(player.myPokemon[0]);
-sleep(6);
 	cout << endl << endl << player.name << "'s Bank Account: $" << player.money << endl;
-sleep(3);
 	cout << endl << endl <<
 		"Okay " << player.name << ", you and " << player.myPokemon[0].nickname << " are ready to begin your adventure!" << endl << endl;
-sleep(3);
 	cout << "Let's begin by searching around the woods for pokemon." << endl;
-sleep(6);
 	hunt(player);
 	cout << "\x1B[2J\x1B[H";
 	cout << "Now, let's visit the PokeCenter to heal your Pokemon!" << endl;
-sleep(3);
 	PokeCenter(player);
 
 }
