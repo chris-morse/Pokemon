@@ -82,3 +82,9 @@ If the player can defeat the gym leader, he wins.
 
 git commit -a -m "update message in quotes"
 git push origin main
+
+
+
+
+
+QUINNITO EDIT
