@@ -1,5 +1,8 @@
 #include "Move.hpp"
 
+
+//test test 
+
 Move::Move(){
 
 	name = "undefined move";
@@ -42,5 +45,4 @@ Move::Move(string moveName) {
 		accuracy = 90;
 	}
 }
-
 
