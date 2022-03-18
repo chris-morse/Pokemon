@@ -1,5 +1,8 @@
 //Pokemon.hpp 
 //Created by Chris Morse 3/14/22
+/**
+ * This file stores the logisitics for the Pokemon object. 
+ */
 #ifndef POKEMON_HPP
 #define POKEMON_HPP
 #include "Move.hpp"
